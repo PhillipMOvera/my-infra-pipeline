@@ -1,0 +1,188 @@
+{
+    "version": 3,
+    "deployment": {
+        "manifest": {
+            "time": "2024-11-28T01:23:39.291104+01:00",
+            "magic": "5940908c784973c8e9a8f9ffdbf0d10a972e797fd0908c14755c86dc57110583",
+            "version": "v3.142.0"
+        },
+        "secrets_providers": {
+            "type": "service",
+            "state": {
+                "url": "https://api.pulumi.com",
+                "owner": "PhillipMOvera",
+                "project": "my-infra-pipeline",
+                "stack": "dev"
+            }
+        },
+        "metadata": {},
+        "resources": [
+            {
+                "urn": "urn:pulumi:dev::my-infra-pipeline::pulumi:pulumi:Stack::my-infra-pipeline-dev",
+                "custom": false,
+                "type": "pulumi:pulumi:Stack",
+                "outputs": {
+                    "bucket_name": "pulumi-demo-20241127235209642800000001",
+                    "dynamodb_table_name": "my-dynamodb-table-6bc6d65"
+                },
+                "created": "2024-11-27T23:52:05.951692Z",
+                "modified": "2024-11-27T23:52:05.951692Z",
+                "sourcePosition": "project:///venv/lib/python3.9/site-packages/pulumi/runtime/stack.py#142"
+            },
+            {
+                "urn": "urn:pulumi:dev::my-infra-pipeline::pulumi:providers:aws::default_6_61_0",
+                "custom": true,
+                "id": "dbfc6fa2-0011-4801-843b-8aa25ca20d59",
+                "type": "pulumi:providers:aws",
+                "inputs": {
+                    "__internal": {},
+                    "region": "eu-west-1",
+                    "skipCredentialsValidation": "false",
+                    "skipRegionValidation": "true",
+                    "version": "6.61.0"
+                },
+                "outputs": {
+                    "region": "eu-west-1",
+                    "skipCredentialsValidation": "false",
+                    "skipRegionValidation": "true",
+                    "version": "6.61.0"
+                },
+                "created": "2024-11-27T23:52:08.716503Z",
+                "modified": "2024-11-27T23:52:08.716503Z"
+            },
+            {
+                "urn": "urn:pulumi:dev::my-infra-pipeline::aws:s3/bucket:Bucket::my-pulumi-bucket",
+                "custom": true,
+                "id": "pulumi-demo-20241127235209642800000001",
+                "type": "aws:s3/bucket:Bucket",
+                "inputs": {
+                    "__defaults": [
+                        "forceDestroy"
+                    ],
+                    "acl": "private",
+                    "bucketPrefix": "pulumi-demo-",
+                    "forceDestroy": false
+                },
+                "outputs": {
+                    "accelerationStatus": "",
+                    "acl": "private",
+                    "arn": "arn:aws:s3:::pulumi-demo-20241127235209642800000001",
+                    "bucket": "pulumi-demo-20241127235209642800000001",
+                    "bucketDomainName": "pulumi-demo-20241127235209642800000001.s3.amazonaws.com",
+                    "bucketPrefix": "pulumi-demo-",
+                    "bucketRegionalDomainName": "pulumi-demo-20241127235209642800000001.s3.eu-west-1.amazonaws.com",
+                    "corsRules": [],
+                    "forceDestroy": false,
+                    "grants": [],
+                    "hostedZoneId": "Z1BKCTXD74EZPE",
+                    "id": "pulumi-demo-20241127235209642800000001",
+                    "lifecycleRules": [],
+                    "loggings": [],
+                    "objectLockConfiguration": null,
+                    "policy": null,
+                    "region": "eu-west-1",
+                    "replicationConfiguration": null,
+                    "requestPayer": "BucketOwner",
+                    "serverSideEncryptionConfiguration": {
+                        "rule": {
+                            "applyServerSideEncryptionByDefault": {
+                                "kmsMasterKeyId": "",
+                                "sseAlgorithm": "AES256"
+                            },
+                            "bucketKeyEnabled": false
+                        }
+                    },
+                    "versioning": {
+                        "enabled": false,
+                        "mfaDelete": false
+                    },
+                    "website": null,
+                    "websiteDomain": null,
+                    "websiteEndpoint": null
+                },
+                "parent": "urn:pulumi:dev::my-infra-pipeline::pulumi:pulumi:Stack::my-infra-pipeline-dev",
+                "provider": "urn:pulumi:dev::my-infra-pipeline::pulumi:providers:aws::default_6_61_0::dbfc6fa2-0011-4801-843b-8aa25ca20d59",
+                "propertyDependencies": {
+                    "acl": [],
+                    "bucketPrefix": []
+                },
+                "created": "2024-11-27T23:52:11.533751Z",
+                "modified": "2024-11-27T23:52:11.533751Z",
+                "sourcePosition": "project:///venv/lib/python3.9/site-packages/pulumi_aws/s3/bucket.py#1532"
+            },
+            {
+                "urn": "urn:pulumi:dev::my-infra-pipeline::aws:dynamodb/table:Table::my-dynamodb-table",
+                "custom": true,
+                "id": "my-dynamodb-table-6bc6d65",
+                "type": "aws:dynamodb/table:Table",
+                "inputs": {
+                    "__defaults": [
+                        "name",
+                        "tableClass"
+                    ],
+                    "attributes": [
+                        {
+                            "__defaults": [],
+                            "name": "id",
+                            "type": "S"
+                        }
+                    ],
+                    "billingMode": "PAY_PER_REQUEST",
+                    "hashKey": "id",
+                    "name": "my-dynamodb-table-6bc6d65",
+                    "tableClass": "STANDARD"
+                },
+                "outputs": {
+                    "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1800000000000,\"delete\":600000000000,\"update\":3600000000000},\"schema_version\":\"1\"}",
+                    "arn": "arn:aws:dynamodb:eu-west-1:692859934596:table/my-dynamodb-table-6bc6d65",
+                    "attributes": [
+                        {
+                            "name": "id",
+                            "type": "S"
+                        }
+                    ],
+                    "billingMode": "PAY_PER_REQUEST",
+                    "deletionProtectionEnabled": false,
+                    "globalSecondaryIndexes": [],
+                    "hashKey": "id",
+                    "id": "my-dynamodb-table-6bc6d65",
+                    "importTable": null,
+                    "localSecondaryIndexes": [],
+                    "name": "my-dynamodb-table-6bc6d65",
+                    "onDemandThroughput": null,
+                    "pointInTimeRecovery": {
+                        "enabled": false
+                    },
+                    "rangeKey": null,
+                    "readCapacity": 0,
+                    "replicas": [],
+                    "restoreDateTime": null,
+                    "restoreSourceName": null,
+                    "restoreSourceTableArn": null,
+                    "restoreToLatestTime": null,
+                    "serverSideEncryption": null,
+                    "streamArn": "",
+                    "streamEnabled": false,
+                    "streamLabel": "",
+                    "streamViewType": "",
+                    "tableClass": "STANDARD",
+                    "ttl": {
+                        "attributeName": "",
+                        "enabled": false
+                    },
+                    "writeCapacity": 0
+                },
+                "parent": "urn:pulumi:dev::my-infra-pipeline::pulumi:pulumi:Stack::my-infra-pipeline-dev",
+                "provider": "urn:pulumi:dev::my-infra-pipeline::pulumi:providers:aws::default_6_61_0::dbfc6fa2-0011-4801-843b-8aa25ca20d59",
+                "propertyDependencies": {
+                    "attributes": [],
+                    "billingMode": [],
+                    "hashKey": []
+                },
+                "created": "2024-11-28T00:23:37.899712Z",
+                "modified": "2024-11-28T00:23:37.899712Z",
+                "sourcePosition": "project:///venv/lib/python3.9/site-packages/pulumi_aws/dynamodb/table.py#1260"
+            }
+        ]
+    }
+}
